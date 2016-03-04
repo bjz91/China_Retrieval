@@ -5,6 +5,6 @@ tic
 
 addpath('main');
 
-combine_OMI_ECMWF_data(3,2005,2014,1,12);
+combine_OMI_ECMWF_data(1,2005,2013,1,12);
 
 toc

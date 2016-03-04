@@ -1,7 +1,7 @@
 function combine_OMI_ECMWF_data(ROI_index,start_jahr,end_jahr,start_month,end_month)
 path_input_files='input/';
 load([path_input_files 'grid_definitions.mat']);
-load([path_input_files 'ROI_definitions.mat']);
+load([path_input_files 'ROI_definitions_china.mat']);
 
 path_regional_files='output/';
 

@@ -1,8 +1,8 @@
 
-ROI_index=3;
+ROI_index=1;
 
 start_jahr=2005;
-end_jahr=2014;
+end_jahr=2013;
 start_month=1;
 end_month=12;
 
@@ -21,7 +21,7 @@ winddirlabel=['SE'; 'S '; 'SW'; 'E '; '0 '; 'W '; 'NE'; 'N '; 'NW'];
 
 path_input_files='input/';
 load([path_input_files 'grid_definitions.mat']);
-load([path_input_files 'ROI_definitions.mat']);
+load([path_input_files 'ROI_definitions_china.mat']);
 
 path_regional_files='output/';
 DATA_dirname=[path_regional_files 'Region_OMI_ECMWF_average_fine_resolution_' ROI(ROI_index).name];
@@ -33,7 +33,7 @@ if ROI_index==2
 elseif ROI_index==3
     address=[path_input_files 'Location_Europe.xls'];
 else
-    address=[path_input_files 'Location_China.xls'];
+    address=[path_input_files 'Location_China_new.xls'];
 end;
 [number,txt,raw]=xlsread(address);
 clear number txt

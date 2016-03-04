@@ -1,6 +1,6 @@
 clear all
-seasons=1:7
-%seasons=6
+%seasons=1:7
+seasons=6
 
 intergrate_across_wind_para_path;
 path_regional_files2=[path_regional_files start_jahrstr '_' end_jahrstr];
@@ -54,8 +54,6 @@ for k=1:size(raw,1)-1
                 %BJZ edit
                 aa=100; %h=200km
                 bb=20;  %v=40km
-                %aa=250;
-                %bb=250;
             case 'M'
                 aa=100;
                 bb=20;
@@ -69,9 +67,9 @@ for k=1:size(raw,1)-1
         end;
  
         
-        %BJZ edit why 1.5?
+        %BJZ edit why 1.5? Susceptibility Analysis
         % aa=aa*1.5;
-         %bb=bb*1.5;
+        % bb=bb*1.5;
         
         clear Intergrate;
         out_dirname=[out_dirname_main '/' name];

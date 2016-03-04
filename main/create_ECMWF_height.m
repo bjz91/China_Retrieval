@@ -1,7 +1,7 @@
 function create_ECMWF_height(ROI_index,jahr,monat)
 %when we have global ECMWF data, we should verify
 %v_wind=v_wind(ROI(ROI_index).ivec,ROI(ROI_index).jvec,:);
-load 'input/ROI_definitions.mat';
+load 'input/ROI_definitions_china.mat';
 
 path_regional_files='output/';
 dirname=[path_regional_files 'Region_mapping_OMI_ECMWF_' ROI(ROI_index).name];
@@ -14,7 +14,7 @@ if ~exist(out_dirname,'dir')
     system(['mkdir -p ' out_dirname]);
 end;
 
-path_ECMWF='/home/bijianzhao/bjz_tmp/Europe/Europe036Hourly/';
+path_ECMWF='/public/tmp/bjz/China/China036Hourly/';
 
 flag_result=zeros(size(time_acrosstrack_alongtrack,1),size(time_acrosstrack_alongtrack,2));
 height=cell(size(time_acrosstrack_alongtrack,1),size(time_acrosstrack_alongtrack,2));

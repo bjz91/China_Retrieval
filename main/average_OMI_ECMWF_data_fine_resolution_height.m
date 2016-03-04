@@ -8,7 +8,7 @@ resolution=4;
 %with 15 layers, thus remove the most 6 top wind data afterwards
 path_input_files='input/';
 load([path_input_files 'grid_definitions.mat']);
-load([path_input_files 'ROI_definitions.mat']);
+load([path_input_files 'ROI_definitions_china.mat']);
 
 path_regional_files='output/';
 DATA_dirname=[path_regional_files 'Region_OMI_ECMWF_data_' ROI(ROI_index).name];
