@@ -11,7 +11,11 @@ for i=1:size(Points,2)
     disp(Points{i});
     
     %% Load data
-    load([str,Points{i},'/Intergrate_calm_',Points{i},'_100_bb20_linear_multiple.mat']);
+    if i<29
+        load([str,Points{i},'/Intergrate_calm_',Points{i},'_100_bb20_linear_multiple.mat']);
+    else
+        load([str,Points{i},'/Intergrate_calm_',Points{i},'_50_bb20_linear_multiple.mat']);
+    end
     
     %Load lifetime
     tau=tau_final{i,2};

@@ -2,6 +2,7 @@ clear
 clc
 
 addpath('src');
+addpath('main');
 
 tic
 
