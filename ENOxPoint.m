@@ -1,6 +1,6 @@
-str='/home/bijianzhao/git/China/output/2005_2013/Intergrate_column_height_resolution4_China_altitude500_calmspeed2_maxspeed1000/';
-load('/home/bijianzhao/git/China/input/Points.mat');
-load('/home/bijianzhao/git/China/res/tau.mat');
+str='output/2005_2013/Intergrate_column_height_resolution4_China_altitude500_calmspeed2_maxspeed1000/';
+load('input/Points.mat');
+load('res/tau.mat');
 
 ENOx_final=cell(size(Points,2),2);
 
@@ -62,18 +62,20 @@ for i=1:size(Points,2)
         ENOx=ENO2*1.32;
         ENOx_final{i,1}=Points{i};
         ENOx_final{i,2}=ENOx;
+        ENOx_final{i,3}=A;
         
     else
         
         ENOx_final{i,1}=Points{i};
         ENOx_final{i,2}=NaN;
+        ENOx_final{i,3}=NaN;
         
     end
     
-    disp(ENOx);
+    disp(ENOx_final{i,2});
     
     clear Intergrate
     
 end
 
-save(['/home/bijianzhao/git/China/res/','Emission.mat'],'ENOx_final');
+save(['res/','Emission.mat'],'ENOx_final');

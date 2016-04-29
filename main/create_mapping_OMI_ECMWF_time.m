@@ -53,29 +53,27 @@ for tag=1:eomday(jahr,monat)
         netcdf.close(ncid);
     end;
     
-    %lack data for 01/01/2014
-    %{
-    if jahr== 2013 && monat==12 && tag==31
+    %lack data for 01/01/2016
+    if jahr== 2015 && monat==12 && tag==31
         tom_jahrstr=num2str(jahr);
         tom_monatstr='12';
         tom_tagstr='31';
     else
-    %}
-    %load the 'tomorrow' data for interpolate
-    if monat==12 && tag==31
-        tom_jahrstr=num2str(jahr+1);
-        tom_monatstr='01';
-        tom_tagstr='01';
-    elseif monat<12 && tag==eomday(jahr,monat)
-        tom_jahrstr=num2str(jahr);
-        tom_monatstr=num2str(monat+1); if monat+1<10 tom_monatstr=['0' tom_monatstr]; end;
-        tom_tagstr='01';
-    else
-        tom_jahrstr=num2str(jahr);
-        tom_monatstr=num2str(monat); if monat<10 tom_monatstr=['0' tom_monatstr]; end;
-        tom_tagstr=num2str(tag+1); if tag+1<10 tom_tagstr=['0' tom_tagstr]; end;
+        %load the 'tomorrow' data for interpolate
+        if monat==12 && tag==31
+            tom_jahrstr=num2str(jahr+1);
+            tom_monatstr='01';
+            tom_tagstr='01';
+        elseif monat<12 && tag==eomday(jahr,monat)
+            tom_jahrstr=num2str(jahr);
+            tom_monatstr=num2str(monat+1); if monat+1<10 tom_monatstr=['0' tom_monatstr]; end;
+            tom_tagstr='01';
+        else
+            tom_jahrstr=num2str(jahr);
+            tom_monatstr=num2str(monat); if monat<10 tom_monatstr=['0' tom_monatstr]; end;
+            tom_tagstr=num2str(tag+1); if tag+1<10 tom_tagstr=['0' tom_tagstr]; end;
+        end;
     end;
-    %end;
     path=[path_ECMWF tom_jahrstr '/' tom_monatstr '/' tom_tagstr '/netcdf_complete/'];
     tom_flist=dir([path '*_00_complete.nc']);
     fname=[path tom_flist(1).name];

@@ -8,7 +8,7 @@ load([path_input_files 'ROI_definitions_china.mat']);
 %keep_region(1:length(localgrid.lat_ECMWFindex),1:length(localgrid.lon_ECMWFindex))=0;
 %keep_region(ROI(ROI_index).jvec,ROI(ROI_index).ivec)=1;
 
-path_OMI='/public/satellite/OMI/no2/DOMINO_S_v2/';
+path_OMI='/home/bijianzhao/data/OMI/NO2/DOMINO_L2Swath_v2/';
 path_regional_files='output/';
 
 %built the path of input file
@@ -45,10 +45,10 @@ if valid==1
             
             fname=[path flist(ii).name];
             disp(fname);
-            if not(strcmp(fname,'/public/satellite/OMI/no2/DOMINO_S_v2/2013/10/OMI-Aura_L2-OMDOMINO_2013m1002t1854-o49025_v003-2013m1006t001124.he5'))
-                if not(strcmp(fname,'/public/satellite/OMI/no2/DOMINO_S_v2/2013/10/OMI-Aura_L2-OMDOMINO_2013m1009t0548-o49119_v003-2013m1013t000457.he5'))
-                    if not(strcmp(fname,'/public/satellite/OMI/no2/DOMINO_S_v2/2013/12/OMI-Aura_L2-OMDOMINO_2013m1201t1555-o49897_v003-2013m1205t001125.he5'))
-                        if not(strcmp(fname,'/public/satellite/OMI/no2/DOMINO_S_v2/2013/11/OMI-Aura_L2-OMDOMINO_2013m1128t0034-o49844_v003-2013m1202t000156.he5'))
+            if not(strcmp(fname,'/home/bijianzhao/data/OMI/NO2/DOMINO_L2Swath_v2/2013/10/OMI-Aura_L2-OMDOMINO_2013m1002t1854-o49025_v003-2013m1006t001124.he5'))
+                if not(strcmp(fname,'/home/bijianzhao/data/OMI/NO2/DOMINO_L2Swath_v2/2013/10/OMI-Aura_L2-OMDOMINO_2013m1009t0548-o49119_v003-2013m1013t000457.he5'))
+                    if not(strcmp(fname,'/home/bijianzhao/data/OMI/NO2/DOMINO_L2Swath_v2/2013/12/OMI-Aura_L2-OMDOMINO_2013m1201t1555-o49897_v003-2013m1205t001125.he5'))
+                        if not(strcmp(fname,'/home/bijianzhao/data/OMI/NO2/DOMINO_L2Swath_v2/2013/11/OMI-Aura_L2-OMDOMINO_2013m1128t0034-o49844_v003-2013m1202t000156.he5'))
                             
                             lat_center = hdf5read(fname,'/HDFEOS/SWATHS/DominoNO2/Geolocation Fields/Latitude');
                             lon_center = hdf5read(fname,'/HDFEOS/SWATHS/DominoNO2/Geolocation Fields/Longitude');

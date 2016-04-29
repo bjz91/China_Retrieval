@@ -5,7 +5,7 @@ load([path_input_files 'grid_definitions.mat']);
 load([path_input_files 'ROI_definitions_china.mat']);
 
 path_regional_files='output/';
-path_OMI='/public/satellite/OMI/no2/DOMINO_S_v2/';
+path_OMI='/home/bijianzhao/data/OMI/NO2/DOMINO_L2Swath_v2/';
 
 start_jahrstr=num2str(start_jahr);
 end_jahrstr=num2str(end_jahr);
